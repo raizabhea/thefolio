@@ -1,0 +1,21 @@
+# Dependencies
+node_modules/
+
+# Environment variables
+.env
+.env.production
+.env.local
+
+# Build output
+build/
+dist/
+
+# Uploaded files (if using local storage)
+uploads/
+
+# OS files
+.DS_Store
+Thumbs.db
+backend/uploads/
+backend/upload.js/
+frontend/public/Timestamps/

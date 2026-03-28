@@ -1,0 +1,56 @@
+// frontend/src/App.js (updated)
+import { Routes, Route, useLocation } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import ProtectedRoute from './components/ProtectedRoute';
+import SplashPage from './pages/SplashPage';
+import HomePage from './pages/HomePage';
+import AboutPage from './pages/AboutPage';
+import ContactPage from './pages/ContactPage';
+import PostPage from './pages/PostPage';
+import LoginPage from './pages/LoginPage';
+import RegisterPage from './pages/RegisterPage';
+import ProfilePage from './pages/ProfilePage';
+import CreatePostPage from './pages/CreatePostPage';
+import EditPostPage from './pages/EditPostPage';
+import AdminPage from './pages/AdminPage';
+
+console.log('Navbar:', Navbar);
+console.log('ProtectedRoute:', ProtectedRoute);
+console.log('SplashPage:', SplashPage);
+console.log('HomePage:', HomePage);
+console.log('AboutPage:', AboutPage);
+console.log('ContactPage:', ContactPage);
+console.log('PostPage:', PostPage);
+console.log('LoginPage:', LoginPage);
+console.log('RegisterPage:', RegisterPage);
+console.log('ProfilePage:', ProfilePage);
+console.log('CreatePostPage:', CreatePostPage);
+console.log('EditPostPage:', EditPostPage);
+console.log('AdminPage:', AdminPage);
+
+function App() {
+  const location = useLocation();
+  const hideNavbar = location.pathname === '/';
+
+  return (
+    <>
+      {!hideNavbar && <Navbar />}
+      <Routes>
+        <Route path="/" element={<SplashPage />} />
+        <Route path="/home" element={<HomePage />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/contact" element={<ContactPage />} />
+        <Route path="/posts/:id" element={<PostPage />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/register" element={<RegisterPage />} />
+
+        <Route path="/profile" element={<ProtectedRoute><ProfilePage /></ProtectedRoute>} />
+        <Route path="/create-post" element={<ProtectedRoute><CreatePostPage /></ProtectedRoute>} />
+        <Route path="/edit-post/:id" element={<ProtectedRoute><EditPostPage /></ProtectedRoute>} />
+        <Route path="/admin" element={<ProtectedRoute role="admin"><AdminPage /></ProtectedRoute>} />
+      </Routes>
+    </>
+  );
+}
+
+export default App;

@@ -5,7 +5,7 @@ import api from '../api/axios';
 import { useAuth } from '../context/AuthContext';
 
 // Define backend URL (adjust port if needed)
-const BACKEND_URL = 'http://localhost:5000';
+const BACKEND_URL = process.env.REACT_APP_API_URL?.replace('/api', '') || 'http://localhost:5000';
 
 function PostPage() {
   const { id } = useParams();

@@ -19,3 +19,7 @@ Thumbs.db
 backend/uploads/
 backend/upload.js/
 frontend/public/Timestamps/
+# Ignore all .env files except .env.production
+.env
+.env.*
+!.env.production

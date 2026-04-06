@@ -4,7 +4,7 @@ import { useAuth } from '../context/AuthContext';
 import api from '../api/axios';
 
 // Define backend base URL (should match your server)
-const BACKEND_URL = process.env.REACT_APP_API_URL?.replace('/api', '') || 'http://localhost:5000';
+const BACKEND_URL = 'https://thefolio-api.onrender.com';
 
 function ProfilePage() {
   const { user, setUser, logout } = useAuth();

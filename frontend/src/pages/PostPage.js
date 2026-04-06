@@ -78,7 +78,7 @@ function PostPage() {
       <article className="post-full">
         {post.image && (
           <img
-            src={`${BACKEND_URL}/uploads/${user.post}?t=${Date.now()}`}
+            src={`${BACKEND_URL}/uploads/${post.image}`}
             alt={post.title}
             className="post-full-image"
           />

@@ -6,7 +6,7 @@ import { useAuth } from '../context/AuthContext';
 
 // Define backend URL (adjust port if needed)
 const BACKEND_URL = 'https://thefolio-api.onrender.com';
-
+console.log('🔥 USING BACKEND:', BACKEND_URL);
 function PostPage() {
   const { id } = useParams();
   const { user } = useAuth();
@@ -78,7 +78,7 @@ function PostPage() {
       <article className="post-full">
         {post.image && (
           <img
-            src={`${BACKEND_URL}/uploads/${post.image}`}
+            src={`${BACKEND_URL}/uploads/${user.post}?t=${Date.now()}`}
             alt={post.title}
             className="post-full-image"
           />

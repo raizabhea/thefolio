@@ -58,7 +58,7 @@ function HomePage() {
                 <div key={post._id} className="form-container">
                   {post.image && (
                     <img
-                      src={`http://localhost:5000/uploads/${post.image}`}
+                      src={`https://thefolio-api.onrender.com/uploads/${post.image}`}
                       alt={post.title}
                       className="card-img"
                     />

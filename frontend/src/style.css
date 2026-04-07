@@ -216,7 +216,7 @@ body{
 .card-grid {
     background-color: #ffffff;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    
     gap: 32px;
     margin: 32px 0;
 }
